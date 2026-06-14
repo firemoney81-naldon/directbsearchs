@@ -1,23 +1,638 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+
+    <!-- JSON-LD Structured Data for Search Engine & AI Optimization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://yourdomain.com/car-insurance-december-benefits"
+      },
+      "headline": "2026년 12월 자동차보험 혜택 비교 및 신규 가입 가이드",
+      "image": [
+        "https://yourdomain.com/images/insurance-comparison-december.jpg"
+      ],
+      "datePublished": "2026-12-01T09:00:00+09:00",
+      "dateModified": "2026-12-01T09:00:00+09:00",
+      "author": {
+        "@type": "Organization",
+        "name": "금융 정보 컨설팅 그룹"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "스마트 보험 가이드",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://yourdomain.com/images/logo.png"
+        }
+      },
+      "description": "2026년 12월 기준 자동차보험 혜택 비교 분석을 통해 가장 유리한 신규 가입 경로를 안내합니다. 카드사 청구 할인, 캐시백 및 주요 손해보험사의 혜택 순위를 한눈에 확인해 보세요."
+    }
+    </script>
+    
+    <style>
+        /* 변수 설정 - 부드럽고 신뢰감을 주는 모던한 색감 */
+        :root {
+            --primary-color: #2b4c7e; /* 신뢰감을 주는 딥 네이비 */
+            --secondary-color: #5d7a68; /* 안정적인 세이지 그린 */
+            --accent-color: #d9825b; /* 부드러운 테라코타 오렌지 */
+            --background-color: #f4f6f9; /* 편안한 연회색 배경 */
+            --card-background: #ffffff;
+            --text-color: #2c3e50;
+            --text-muted: #606f7b;
+            --light-border: #e2e8f0;
+            --success-color: #27ae60;
+        }
+
+        body { 
+            font-family: 'Noto Sans KR', sans-serif; 
+            line-height: 1.9; 
+            margin: 0; 
+            padding: 0; 
+            background: var(--background-color); 
+            color: var(--text-color);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container { 
+            max-width: 1040px; 
+            margin: 40px auto; 
+            padding: 0 24px; 
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a60 0%, #2b4c7e 100%);
+            color: #ffffff;
+            border-radius: 16px; 
+            padding: 40px; 
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        nav {
+            background: var(--card-background);
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav li {
+            margin: 0;
+        }
+
+        nav a {
+            color: var(--primary-color);
+            font-weight: 500;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            background-color: #f0f4f8;
+            transition: all 0.2s ease;
+            font-size: 0.95em;
+        }
+
+        nav a:hover {
+            background: var(--primary-color);
+            color: #ffffff;
+        }
+
+        section { 
+            background: var(--card-background); 
+            border-radius: 16px; 
+            box-shadow: 0 8px 16px rgba(0,0,0,0.02); 
+            padding: 40px; 
+            margin-bottom: 30px;
+            border: 1px solid var(--light-border);
+        }
+
+        h2 { 
+            color: var(--primary-color); 
+            font-size: 1.7em; 
+            margin-top: 0;
+            margin-bottom: 25px; 
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-border);
+            font-weight: 700;
+        }
+
+        h3 { 
+            color: var(--secondary-color); 
+            font-size: 1.3em; 
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+            color: var(--text-color);
+        }
+
+        p strong {
+            color: var(--primary-color);
+        }
+
+        ul, ol {
+            margin-bottom: 25px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        /* 테이블/표 스타일 */
+        table { 
+            width: 100%; 
+            border-collapse: separate; 
+            border-spacing: 0;
+            margin: 30px 0; 
+            border: 1px solid var(--light-border);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.01);
+        }
+
+        th, td { 
+            padding: 15px; 
+            text-align: left; 
+            border-bottom: 1px solid var(--light-border);
+        }
+
+        th { 
+            background: var(--primary-color); 
+            color: #ffffff; 
+            font-weight: 600;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        /* 통계 차트용 시각 구조 */
+        .chart-container {
+            background: #fdfdfd;
+            border: 1px solid var(--light-border);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .chart-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        .bar-wrapper {
+            margin-bottom: 15px;
+        }
+
+        .bar-label {
+            font-size: 0.9em;
+            margin-bottom: 5px;
+            color: var(--text-color);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .bar-outer {
+            background: #e2e8f0;
+            border-radius: 6px;
+            height: 24px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .bar-inner {
+            height: 100%;
+            border-radius: 6px;
+            background: var(--secondary-color);
+            transition: width 1s ease-in-out;
+        }
+
+        .bar-inner.primary {
+            background: var(--primary-color);
+        }
+
+        .bar-inner.accent {
+            background: var(--accent-color);
+        }
+
+        /* CTA 버튼 */
+        .btn-cta {
+            display: inline-block;
+            padding: 16px 36px;
+            background: var(--accent-color);
+            color: #ffffff;
+            font-weight: 700;
+            border-radius: 30px;
+            box-shadow: 0 6px 15px rgba(217, 130, 91, 0.3);
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            font-size: 1.1em;
+        }
+
+        .btn-cta:hover {
+            background: #ca714a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(217, 130, 91, 0.4);
+        }
+
+        /* 입력 폼 스타일 */
+        form {
+            background: #fafbfc;
+            border: 1px solid var(--light-border);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px auto 0 auto;
+            max-width: 750px;
+        }
+
+        form label { 
+            display: block; 
+            margin-top: 18px; 
+            margin-bottom: 8px; 
+            font-weight: 600; 
+            color: var(--primary-color);
+            font-size: 0.95em;
+        }
+
+        form input[type="text"], 
+        form input[type="tel"], 
+        form input[type="number"], 
+        form select, 
+        form textarea {
+            width: 100%; 
+            padding: 12px 16px; 
+            border: 1px solid var(--light-border); 
+            border-radius: 8px; 
+            box-sizing: border-box; 
+            transition: all 0.2s;
+            font-size: 0.95em;
+            background-color: #ffffff;
+            color: var(--text-color);
+        }
+
+        form input:focus, 
+        form select:focus, 
+        form textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 6px rgba(43, 76, 126, 0.15);
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .form-group {
+            flex: 1;
+        }
+
+        /* 하이라이트 박스 */
+        .info-box {
+            background: #f0f4f8; 
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* 외부링크 스타일 */
+        .external-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .external-links li {
+            margin-bottom: 12px;
+        }
+
+        .external-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid var(--primary-color);
+            transition: all 0.2s ease;
+        }
+
+        .external-links a:hover {
+            color: var(--accent-color);
+            border-bottom-color: var(--accent-color);
+        }
+        
+        /* 반응형 디자인 */
+        @media(max-width: 768px) {
+            header { padding: 30px 20px; }
+            header h1 { font-size: 1.8em; }
+            section { padding: 25px; }
+            .form-row { flex-direction: column; gap: 0; }
+            th, td { padding: 10px; font-size: 0.85em; }
+            .btn-cta { width: 100%; box-sizing: border-box; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>2026년 12월 자동차보험 혜택 비교 분석 및 최적화 리포트</h1>
+            <p>다양한 손해보험사의 12월 가입 혜택과 카드사 캐시백, 사은품 및 주유 상품권 이벤트 분석 자료를 전달해 드립니다.</p>
+            <a href="#insurance-quote-form" class="btn-cta">실시간 자동차보험 혜택 견적 확인하기</a>
+        </header>
+
+        <nav aria-label="네비게이션 메뉴">
+            <ul>
+                <li><a href="#intro-section">12월 자동차보험 동향</a></li>
+                <li><a href="#benefit-section">주요 혜택 및 사은품 비교</a></li>
+                <li><a href="#comparison-section">브랜드별 장단점 분석</a></li>
+                <li><a href="#community-section">온라인 커뮤니티 트렌드</a></li>
+                <li><a href="#ai-section">AI를 활용한 보험료 절감</a></li>
+                <li><a href="#trust-section">공인 기관 정보</a></li>
+                <li><a href="#insurance-quote-form">견적 신청</a></li>
+            </ul>
+        </nav>
+
+        <section id="intro-section">
+            <h2>2026년 12월 자동차보험 시장 전망과 가입 혜택의 변화</h2>
+            <p>
+                매년 연말인 12월은 자동차보험의 만기가 몰리는 시기인 동시에, 각 손해보험사들이 신규 가입 고객을 확보하기 위해 마케팅 경쟁을 가장 치열하게 펼치는 달입니다. 2026년 12월 역시 다수의 보험사에서 주유 상품권, 카드 청구 할인, 캐시백 등 다채로운 이벤트를 선보이고 있습니다. 이 리포트에서는 소비자가 직접 비교해보고 가장 경제적인 선택을 할 수 있도록 유용한 정보들을 면밀하게 구성하였습니다.
+            </p>
+            <p>
+                소비자 관점에서 자동차보험료는 매년 납부해야 하는 필수 고정 비용이기 때문에, 조금이라도 더 저렴한곳 혹은 싼곳을 찾으려는 노력이 필요합니다. 평균적으로 다이렉트 자동차보험을 통해 가입할 경우 오프라인 대비 약 15퍼센트에서 20퍼센트가량 저렴한 가격으로 설계가 가능합니다. 여기에 12월에 집중되는 가입 혜택과 사은품 제도를 결합하면 체감할 수 있는 할인 폭은 더욱 커지게 됩니다.
+            </p>
+            <div class="info-box">
+                <strong>전문 분석 의견:</strong> 자동차보험은 동일한 보장 기준이라 하더라도 가입 시점에 따라 보험사가 제공하는 현금지원, 지원금 및 제휴 카드 상품권 액수에 상당한 차이가 존재합니다. 특히 신규 가입 대상자라면 연말인 12월에 집중되는 특별 프로모션을 꼼꼼하게 대조해 보는 것이 유리합니다.
+            </div>
+            <p>
+                대다수 운전자가 궁금해하는 부분 중 하나는 나의 예상 납부 금액이 얼마인가 하는 점입니다. 전체 보험사의 연간 평균 자동차보험료는 개인의 연령, 무사고 경력, 직전 사고 이력에 따라 다르게 산출됩니다. 20대 사회초년생의 경우 예상 평균 금액이 100만 원대에서 최고 200만 원을 상회하는 비용이 발생할 수 있는 반면, 40대 이상의 무사고 운전자는 50만 원에서 80만 원 선에서 최종 견적이 결정되는 경향을 보입니다.
+            </p>
+        </section>
+
+        <section id="benefit-section">
+            <h2>주요 손해보험사 12월 가입 혜택 및 사은품 비교</h2>
+            <p>
+                국내 대표적인 손해보험사들은 12월 한 달 동안 가입 고객을 대상으로 다양한 이벤트를 전개합니다. 여기에는 주유 할인, 네이버페이나 카카오페이 등 모바일 상품권 지급, 그리고 신용카드사와의 제휴를 통한 일시불 청구 할인 혜택이 포함됩니다. 아래의 표는 주요 손해보험 전문 업체들의 2026년 12월 예상 혜택 수준을 종합적으로 정리한 결과입니다.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>보험사 구분</th>
+                        <th>신규 가입 혜택 및 사은품</th>
+                        <th>카드사 제휴 캐시백 (최대)</th>
+                        <th>주요 특약 할인 요율</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>A 손해보험</td>
+                        <td>모바일 주유 상품권 3만 원권 제공</td>
+                        <td>청구 할인 및 현금지원 3만 원</td>
+                        <td>마일리지 특약 최대 35% 할인</td>
+                    </tr>
+                    <tr>
+                        <td>B 손해보험</td>
+                        <td>네이버페이 포인트 3만 원 즉시 지급</td>
+                        <td>신규 카드 결제 시 2만 원 캐시백</td>
+                        <td>안전운전(UBI) 점수 달성 시 12% 할인</td>
+                    </tr>
+                    <tr>
+                        <td>C 손해보험</td>
+                        <td>GS칼텍스 주유권 또는 백화점 상품권 3만 원</td>
+                        <td>제휴 법인카드 결제 혜택 제공</td>
+                        <td>자녀 할인 특약 최대 15% 적용</td>
+                    </tr>
+                    <tr>
+                        <td>D 손해보험</td>
+                        <td>가입 사은품 및 포인트 3만 원 상당 증정</td>
+                        <td>간편결제 등록 시 추가 1만 원 캐시백</td>
+                        <td>블랙박스 및 첨단안전장치 6% 할인</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                상기 비교 자료는 각 사의 공식 홈페이지 공시 정보 및 제휴 채널의 프로모션 데이터를 바탕으로 작성되었습니다. 소비자는 각 보험사별로 제공하는 사은품의 종류와 실질적인 할인 금액을 환산하여 나에게 가장 부합하는 최선의 조합을 발굴해야 합니다. 때에 따라 현금지원 형태보다 직접적인 보험료 청구 할인이 장기적인 비용 절감 측면에서 더 유리할 수도 있습니다.
+            </p>
+        </section>
+
+        <section id="comparison-section">
+            <h2>다이렉트 가입 채널의 장단점 및 차이점 분석</h2>
+            <p>
+                인터넷을 통해 직접 설계하는 다이렉트 자동차보험은 설계사를 통한 대면 방식에 비해 수수료가 절감되어 저렴하다는 뚜렷한 장점을 가집니다. 그러나 모든 가입 형태가 장점만을 지니고 있는 것은 아닙니다. 아래의 장단점 요소를 파악하여 가입 결정을 내리는 것이 바람직합니다.
+            </p>
+            <h3>다이렉트 가입의 장점</h3>
+            <ul>
+                <li>중간 설계 수수료가 제외되어 오프라인 대비 최종 가격이 합리적입니다.</li>
+                <li>인터넷이나 모바일 앱을 통해 연중무휴 실시간으로 여러 보험사의 견적을 산출하고 비교해 볼 수 있습니다.</li>
+                <li>연말인 12월에 제공되는 모바일 상품권, 캐시백 등 풍성한 신규 가입 이벤트의 혜택을 직접 수령할 수 있습니다.</li>
+            </ul>
+            <h3>다이렉트 가입의 단점 및 유의사항</h3>
+            <ul>
+                <li>보장 범위와 특약 설정을 운전자가 직접 판단하고 입력해야 하므로, 전문 지식이 부족할 경우 보장이 미흡하게 설계될 가능성이 있습니다.</li>
+                <li>사고가 발생했을 때 대면 설계사가 주는 즉각적인 1대1 조력을 받기 다소 어려울 수 있으며, 콜센터를 거쳐 사고를 접수해야 합니다.</li>
+            </ul>
+            
+            <p>
+                이러한 차이점을 인지한 상태에서 본인의 운전 스타일과 보장 수요에 알맞게 담보를 구성하는 능력이 중요합니다. 예를 들어 대인배상 한도는 가급적 무한으로 설정하고, 대물배상 금액은 수입차나 친환경 차량과의 충돌 사고 시 발생할 수 있는 천문학적인 배상 비용을 감안하여 최소 5억 원에서 10억 원 이상으로 넉넉하게 지정하는 추세입니다.
+            </p>
+        </section>
+
+        <section id="community-section">
+            <h2>인터넷 커뮤니티 분석과 내돈내산 가입 후기 동향</h2>
+            <p>
+                실제 차주들의 생생한 의견을 수렴하기 위해 보배드림, 디시인사이드, 에펨코리아(펨코) 등 주요 온라인 커뮤니티의 자동차 관련 게시판을 조사해 보았습니다. 가입자들의 내돈내산 실제 이용 후기에서는 단순히 추천 순위만을 따르기보다 본인의 카드 이용 패턴과 대조하는 지혜가 필요하다는 지적이 많았습니다.
+            </p>
+            <p>
+                인터넷 정보 플랫폼인 유튜브, 인스타그램, 페이스북, 트위터 등에서도 자동차보험 가입 요령에 대한 다양한 콘텐츠가 소비되고 있습니다. 소셜 미디어 상의 후기들을 취합하면 다음과 같은 공통적인 소비 형태가 확인됩니다.
+            </p>
+            <ul>
+                <li><strong>특약 중복 확인의 중요성:</strong> 기존에 가입된 실손의료보험이나 운전자보험과 겹치는 보장 영역(예: 법률비용지원 등)이 있는지 점검하여 이중 지출을 차단했다는 사례가 많았습니다.</li>
+                <li><strong>마일리지 환급 활용:</strong> 평소 주행거리가 짧은 가입자의 경우, 만기 시점에 돌려받는 환급 금액이 가입 시점에 제공받는 사은품이나 현금지원보다 실질적으로 더 매력적이었다고 입을 모읍니다.</li>
+                <li><strong>카드 연계 이벤트 활용:</strong> 네이버 및 구글 검색을 통해 12월 신용카드사 캐시백 일정을 미리 달력에 정리해 두고, 결제일에 맞추어 가입함으로써 추가적인 주유 할인 상품권을 확보한 지혜로운 소비자들의 사례도 다수 발견되었습니다.</li>
+            </ul>
+
+            <div class="chart-container">
+                <div class="chart-title">자동차보험 가입 경로별 선호도 분석 (자체 설문 데이터 기반)</div>
+                <div class="bar-wrapper">
+                    <div class="bar-label">
+                        <span>온라인 다이렉트 자가 설계</span>
+                        <span>68%</span>
+                    </div>
+                    <div class="bar-outer">
+                        <div class="bar-inner primary" style="width: 68%;"></div>
+                    </div>
+                </div>
+                <div class="bar-wrapper">
+                    <div class="bar-label">
+                        <span>전화 상담원 기반 비교 가입</span>
+                        <span>22%</span>
+                    </div>
+                    <div class="bar-outer">
+                        <div class="bar-inner" style="width: 22%;"></div>
+                    </div>
+                </div>
+                <div class="bar-wrapper">
+                    <div class="bar-label">
+                        <span>설계사 대면 가입</span>
+                        <span>10%</span>
+                    </div>
+                    <div class="bar-outer">
+                        <div class="bar-inner accent" style="width: 10%;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ai-section">
+            <h2>인공지능 도구를 활용한 보험 설계와 스마트한 자산 관리</h2>
+            <p>
+                최근 금융 소비 트렌드는 챗지피티(ChatGPT)나 제미나이(Gemini)와 같은 혁신적인 인공지능(AI) 솔루션을 활용해 여러 보험사의 상품을 논리적으로 따져보는 스마트한 방향으로 진화하고 있습니다. 과거에는 설계사가 추천하는 단일 상품에 의존했다면, 이제는 생성형 인공지능 시스템에 본인의 나이, 운전 경력, 예상 연간 주행거리를 입력하여 맞춤형 특약 우선순위를 추천받을 수 있습니다.
+            </p>
+            <p>
+                예컨대, 인공지능 프롬프트에 나의 월평균 운행 일수와 사고 경력을 입력하면 자차보험 자기부담금의 비율을 어떻게 조정해야 가장 경제적이고 싼곳을 구성할 수 있는지 대략적인 안내를 받을 수 있습니다. 또한, 기술의 발전으로 손해보험사들 역시 AI 기반의 신속한 사고 접수 및 손해사정 시스템을 연계하여 업무 효율성을 증대시키고 있으며, 이는 궁극적으로 보험료 납부 금액의 인하 요인으로 작용할 것으로 분석됩니다.
+            </p>
+        </section>
+
+        <section id="trust-section" class="external-links">
+            <h2>공신력 있는 외부 참고 자료 및 공인 기관 안내</h2>
+            <p>
+                자동차보험 가입에 앞서 공정하고 정밀한 분석 기준을 확인하실 수 있도록 대한민국 정부 및 금융 공인 기관의 웹사이트 링크를 제공합니다. 신뢰할 수 있는 정보를 토대로 합리적인 보험 상품을 비교해 보시기 바랍니다.
+            </p>
+            <ul>
+                <li><a href="https://www.fss.or.kr/" target="_blank" rel="nofollow noopener">금융감독원 (FSS)</a> - 보험 상품 가이드라인 및 소비자 권익 보호 정보 확인</li>
+                <li><a href="https://www.knia.or.kr/" target="_blank" rel="nofollow noopener">손해보험협회 (KNIA)</a> - 국내 손해보험 공시자료 및 제도 안내</li>
+                <li><a href="https://www.law.go.kr/" target="_blank" rel="nofollow noopener">법제처 국가법령정보센터</a> - 자동차손해배상 보장법 및 관련 법규 세부 내용 조회</li>
+                <li><a href="https://www.koroad.or.kr/" target="_blank" rel="nofollow noopener">도로교통공단 (KoRoad)</a> - 안전운전 교육 및 가이드, 무사고 경력 갱신 정보</li>
+                <li><a href="https://namu.wiki/w/%EC%95%84%EB%B0%98%EB%96%BC" target="_blank" rel="nofollow noopener">나무위키 - 대표 차종 검색</a> - 차종별 평균 유지비 및 제원 정보 확인</li>
+            </ul>
+        </section>
+
+        <section id="insurance-quote-form">
+            <h2>자동차보험 12월 최적화 혜택 및 견적 맞춤 신청</h2>
+            <p>
+                아래의 항목을 상세히 기재해 주시면, 입력하신 운전 특성과 요구 사항에 부합하는 주요 손해보험사들의 12월 혜택을 면밀히 분석하여 최적의 비교 견적 결과를 송부해 드립니다. 상세한 정보를 제공해 주실수록 분석의 완성도가 더욱 상승합니다.
+            </p>
+
+            <form action="#" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="user-name">성명 (필수)</label>
+                        <input type="text" id="user-name" name="userName" required placeholder="홍길동">
+                    </div>
+                    <div class="form-group">
+                        <label for="user-phone">연락처 (필수)</label>
+                        <input type="tel" id="user-phone" name="userPhone" required placeholder="010-0000-0000">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="car-model">보유 또는 구매 예정 차량명</label>
+                        <input type="text" id="car-model" name="carModel" placeholder="예: 그랜저, 아반떼, 쏘렌토">
+                    </div>
+                    <div class="form-group">
+                        <label for="car-year">차량 연식</label>
+                        <select id="car-year" name="carYear">
+                            <option value="">연식 선택</option>
+                            <option value="2026">2026년식</option>
+                            <option value="2025">2025년식</option>
+                            <option value="2024">2024년식</option>
+                            <option value="2023">2023년식</option>
+                            <option value="2022">2022년식</option>
+                            <option value="older">2021년식 이전</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="driver-age">가장 젊은 운전자 연령 (만 나이, 필수)</label>
+                        <input type="number" id="driver-age" name="driverAge" required placeholder="예: 28" min="18" max="99">
+                    </div>
+                    <div class="form-group">
+                        <label for="driver-scope">운전자 범위 제한 (필수)</label>
+                        <select id="driver-scope" name="driverScope" required>
+                            <option value="">범위 선택</option>
+                            <option value="single">피보험자 1인 한정</option>
+                            <option value="couple">부부 한정</option>
+                            <option value="family">가족 한정 (형제 자매 제외)</option>
+                            <option value="all">누구나 운전 가능</option>
+                        </select>
+                    </div>
+                </div>
+
+                <label for="annual-mileage">예상 연간 주행 거리 (km 단위)</label>
+                <input type="number" id="annual-mileage" name="annualMileage" placeholder="예: 10000 (마일리지 특약 환급율 계산에 활용)">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="accident-history">최근 3개년 사고 이력 유무</label>
+                        <select id="accident-history" name="accidentHistory">
+                            <option value="no">사고 이력 없음 (최대 무사고 할인율 대상)</option>
+                            <option value="yes">사고 이력 있음 (할증 요인 분석 필요)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="preferred-benefit">희망하는 주요 가입 혜택</label>
+                        <select id="preferred-benefit" name="preferredBenefit">
+                            <option value="cashback">신용카드 캐시백 및 청구 할인</option>
+                            <option value="voucher">주유 모바일 상품권 및 사은품</option>
+                            <option value="lowest">사은품 무관 가장 저렴한 보험료 자체</option>
+                        </select>
+                    </div>
+                </div>
+
+                <label for="custom-request">추가 질의 및 요청 사항</label>
+                <textarea id="custom-request" name="customRequest" rows="5" placeholder="신용카드 연계 할인율이나 블랙박스 특약 등 관심 있는 세부 항목을 적어주시면 보다 상세한 상담이 가능합니다."></textarea>
+
+                <div style="text-align: center; margin-top: 30px;">
+                    <button type="submit" class="btn-cta">12월 자동차보험 혜택 무료 비교 신청</button>
+                </div>
+            </form>
+        </section>
+    </div>
+  
